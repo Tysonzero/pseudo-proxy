@@ -1,5 +1,5 @@
 <?php
-    function url($part)
+    function url($part = -1)
     {
         $url = parse_url($_SERVER['QUERY_STRING']);
         $scheme = (empty($url['scheme']) ? '' : $url['scheme'].'://');
@@ -12,6 +12,9 @@
         }
         elseif ($part == 1) {
             return $path.$query;
+        }
+        else {
+            return $scheme.$host.$port.$path.$query;
         }
     };
 
