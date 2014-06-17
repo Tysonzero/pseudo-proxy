@@ -18,5 +18,7 @@
         }
     };
 
-    echo file_get_contents($_SERVER['QUERY_STRING']);
+    $contents = file_get_contents(url());
+
+    echo $contents;
 ?>
