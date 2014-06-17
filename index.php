@@ -1,3 +1,3 @@
 <?php
-	echo file_get_contents($_SERVER['QUERY_STRING'])
+    echo file_get_contents($_SERVER['QUERY_STRING']);
 ?>
