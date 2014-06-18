@@ -36,17 +36,17 @@
 
     $contents = file_get_contents($_SERVER['QUERY_STRING']);
 
-    $contents = preg_replace('#action="(/[\w\./-]*)"#', 'action="/?'.url(0).'${1}"', $contents);
-    $contents = preg_replace('#href="(/[\w\./-]*)"#', 'href="/?'.url(0).'${1}"', $contents);
-    $contents = preg_replace('#src="(/[\w\./-]*)"#', 'src="/?'.url(0).'${1}"', $contents);
+    $contents = preg_replace('#action="(/[\w\./?=&-]*)"#', 'action="/?'.url(0).'${1}"', $contents);
+    $contents = preg_replace('#href="(/[\w\./?=&-]*)"#', 'href="/?'.url(0).'${1}"', $contents);
+    $contents = preg_replace('#src="(/[\w\./?=&-]*)"#', 'src="/?'.url(0).'${1}"', $contents);
 
-    $contents = preg_replace('#action="(\w[\w\./-]*)"#', 'src="/?'.url().'${1}"', $contents);
-    $contents = preg_replace('#href="(\w[\w\./-]*)"#', 'href="/?'.url().'${1}"', $contents);
-    $contents = preg_replace('#src="(\w[\w\./-]*)"#', 'src="/?'.url().'${1}"', $contents);
+    $contents = preg_replace('#action="(\w[\w\./?=&-]*)"#', 'src="/?'.url().'${1}"', $contents);
+    $contents = preg_replace('#href="(\w[\w\./?=&-]*)"#', 'href="/?'.url().'${1}"', $contents);
+    $contents = preg_replace('#src="(\w[\w\./?=&-]*)"#', 'src="/?'.url().'${1}"', $contents);
 
-    $contents = preg_replace('#action="([\w\.:/-]*)"#', 'action="/?${1}"', $contents);
-    $contents = preg_replace('#href="([\w\.:/-]*)"#', 'href="/?${1}"', $contents);
-    $contents = preg_replace('#src="([\w\.:/-]*)"#', 'src="/?${1}"', $contents);
+    $contents = preg_replace('#action="(\w*:[\w\.:/?=&-]*)"#', 'action="/?${1}"', $contents);
+    $contents = preg_replace('#href="(\w*:[\w\.:/?=&-]*)"#', 'href="/?${1}"', $contents);
+    $contents = preg_replace('#src="(\w*:[\w\.:/?=&-]*)"#', 'src="/?${1}"', $contents);
 
     echo $contents;
 ?>
