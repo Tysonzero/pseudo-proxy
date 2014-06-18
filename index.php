@@ -11,10 +11,10 @@
             return $scheme.$host.$port;
         }
         elseif ($part == 1) {
-            return $path.$query;
+            return $path;
         }
         else {
-            return $scheme.$host.$port.$path.$query;
+            return $scheme.$host.$port.$path;
         }
     };
 
