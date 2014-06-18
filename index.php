@@ -25,7 +25,7 @@
         header('Content-Type:text/js');
     }
 
-    $contents = file_get_contents(url());
+    $contents = file_get_contents($_SERVER['QUERY_STRING']);
 
     $contents = preg_replace('#action="(/[\w\./-]*)"#', 'action="/?'.url(0).'${1}"', $contents);
     $contents = preg_replace('#href="(/[\w\./-]*)"#', 'href="/?'.url(0).'${1}"', $contents);
