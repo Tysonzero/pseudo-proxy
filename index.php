@@ -18,6 +18,13 @@
         }
     };
 
+    if (preg_replace('#^.*\.#', '', url(1)) == 'css') {
+        header('Content-Type:text/css');
+    }
+    elseif (preg_replace('#^.*\.#', '', url(1)) == 'js') {
+        header('Content-Type:text/js');
+    }
+
     $contents = file_get_contents(url());
 
     $contents = preg_replace('#href="(/[\w\./-]*)"#', 'href="/?'.url(0).'${1}"', $contents);
