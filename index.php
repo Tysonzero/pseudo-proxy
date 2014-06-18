@@ -20,5 +20,14 @@
 
     $contents = file_get_contents(url());
 
+    $contents = preg_replace('#href="(/[\w\./-]*)"#', 'href="/?'.url(0).'${1}"', $contents);
+    $contents = preg_replace('#src="(/[\w\./-]*)"#', 'src="/?'.url(0).'${1}"', $contents);
+
+    $contents = preg_replace('#href="(\w[a-zA-Z/\.-]*)"#', 'href="/?'.url().'${1}"', $contents);
+    $contents = preg_replace('#src="(\w[a-zA-Z/\.-]*)"#', 'src="/?'.url().'${1}"', $contents);
+
+    $contents = preg_replace('#href="([a-zA-Z/\.:-]*)"#', 'href="/?${1}"', $contents);
+    $contents = preg_replace('#src="([a-zA-Z/\.:-]*)"#', 'src="/?${1}"', $contents);
+
     echo $contents;
 ?>
