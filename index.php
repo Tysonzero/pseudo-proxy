@@ -21,8 +21,17 @@
     if (preg_replace('#^.*\.#', '', url(1)) == 'css') {
         header('Content-Type:text/css');
     }
+    elseif (preg_replace('#^.*\.#', '', url(1)) == 'gif') {
+        header('Content-Type:image/gif');
+    }
+    elseif (preg_replace('#^.*\.#', '', url(1)) == 'jpg') {
+        header('Content-Type:image/jpg');
+    }
     elseif (preg_replace('#^.*\.#', '', url(1)) == 'js') {
         header('Content-Type:text/js');
+    }
+    elseif (preg_replace('#^.*\.#', '', url(1)) == 'png') {
+        header('Content-Type:image/png');
     }
 
     $contents = file_get_contents($_SERVER['QUERY_STRING']);
