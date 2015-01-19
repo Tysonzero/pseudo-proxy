@@ -1,4 +1,4 @@
-Pseudo_Proxy
+Pseudo Proxy
 ============
 
 This website works effectively as a Proxy, serving as an intermediary between a user and the server of any given website. This "Pseudo Proxy" can be utilized without the download of a proxy server, and can be implemented by any individual (It's open source!).
